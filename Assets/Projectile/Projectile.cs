@@ -27,10 +27,16 @@ public class Projectile : MonoBehaviour {
         }
 
         transform.position = Vector3.MoveTowards(transform.position, closestPoint, step);
+
+        if (timeToHitPlayer <= 0) {
+            Destroy(gameObject);
+        }
 	}
 
+    /*
     private void OnTriggerEnter(Collider other) {
         print(timeToHitPlayer);
         Destroy(gameObject);
     }
+    */
 }
