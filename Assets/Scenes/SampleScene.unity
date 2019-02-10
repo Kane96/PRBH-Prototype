@@ -260,7 +260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 66.978004, y: 0, z: 0}
 --- !u!114 &534669906
 MonoBehaviour:
@@ -733,7 +733,7 @@ RectTransform:
   m_Children:
   - {fileID: 921216376}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -865,7 +865,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -40, y: 0, z: 0}
 --- !u!1 &2084809769
 GameObject:
@@ -896,7 +896,7 @@ Transform:
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2084809771
 MeshCollider:
@@ -991,8 +991,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2132212086}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb07f703e6369514fb9893c094271c63, type: 3}
+  m_Script: {fileID: 11500000, guid: ab8038b01467b6942a3e7e602c21c2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1158118480874584, guid: cbfd27073abd9414db4784ad5dfa37c0, type: 2}
-  fireRate: 1
+  fireRate: 1000
