@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114794158058835730}
   - component: {fileID: 114744047776304316}
   m_Layer: 5
-  m_Name: Projectile Indicator
+  m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dbf970531e26b44f885a223a33e678b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xPosIncrement: 100
+  timeToHit: 0
 --- !u!114 &114794158058835730
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour {
+public class ProjectileSpawner : MonoBehaviour {
 
     public GameObject projectile;
     public float fireRate;

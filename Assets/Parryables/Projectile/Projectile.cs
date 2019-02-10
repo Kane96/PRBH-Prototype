@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     [Tooltip("In seconds.")]
-    public float timeToHitPlayer;
+    public float timeToHit;
 
     private CharacterController player;
 
@@ -19,8 +19,8 @@ public class Projectile : MonoBehaviour {
 
     void Update () {
         closestPoint = player.ClosestPoint(transform.position);
-        timeToHitPlayer -= Time.deltaTime;
-        step =  Vector3.Distance(transform.position, closestPoint) / (timeToHitPlayer * 60);
+        timeToHit -= Time.deltaTime;
+        step =  Vector3.Distance(transform.position, closestPoint) / (timeToHit * 60);
 
         if (step <= 0) {
             step = 0;
@@ -28,7 +28,7 @@ public class Projectile : MonoBehaviour {
 
         transform.position = Vector3.MoveTowards(transform.position, closestPoint, step);
 
-        if (timeToHitPlayer <= 0) {
+        if (timeToHit <= 0) {
             Destroy(gameObject);
         }
 	}

@@ -4,18 +4,16 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour {
 
-    public GameObject projIndicator;
-    public float fireRate;
-    private float nextFire;
 
-    void Start () {
-		
-	}
-	
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            projIndicator = Instantiate(projIndicator, transform.position, Quaternion.identity) as GameObject;
-            projIndicator.transform.parent = gameObject.transform;
-        }
+    public float timeToHit;
+    private float xPosIncrement;
+
+    private void Start() {
+        float width = Screen.width / 2;
+        gameObject.transform.position += Vector3.left * width;
     }
+
+    void Update () {
+        gameObject.transform.position += Vector3.right * (xPosIncrement * Time.deltaTime);
+	}
 }

@@ -12,7 +12,8 @@ public class ParryableController : MonoBehaviour {
 		
 	}
 
-    private void shootProjectile() {
-
+    private void shootProjectile(float timeToHit) {
+        //indicator.fire(timeToHit)
+        //shooter.fire(timeToHit)
     }
 }
