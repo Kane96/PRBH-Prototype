@@ -7,18 +7,13 @@ public class IndicatorSpawner : MonoBehaviour {
     public GameObject indicator;
     private float screenWidth;
     public float timeToHit;
+    public GameObject parryArea;
 
     private void Start() {
         screenWidth = Screen.width / 2;
     }
 
-    void Update () {
-        if (Input.GetKeyDown(KeyCode.P)) {
-            spawnIndicator(timeToHit, true);
-        }
-    }
-
-    public void spawnIndicator(float timeToHit, bool movingRight) {
+    public void SpawnIndicator(float timeToHit, bool movingRight) {
         float xPosIncrement = screenWidth / timeToHit;
         Vector3 spawnPoint;
         if (!movingRight) {
@@ -29,7 +24,7 @@ public class IndicatorSpawner : MonoBehaviour {
         }
 
         GameObject newIndicator = Instantiate(indicator, spawnPoint, Quaternion.identity) as GameObject;
-        newIndicator.transform.SetParent(gameObject.transform, false);
+        newIndicator.transform.SetParent(parryArea.transform, false);
         newIndicator.GetComponent<Indicator>().Initialise(timeToHit, xPosIncrement, movingRight);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ParryableController : MonoBehaviour {
 
     public ProjectileSpawner projectileSpawner;
-    public GameObject indicatorSpawner;
+    public IndicatorSpawner indicatorSpawner;
 
     public float timeToHit;
 
@@ -20,6 +20,6 @@ public class ParryableController : MonoBehaviour {
 
     private void ShootProjectile() {
         projectileSpawner.SpawnProjectile(projectile, timeToHit, projSpawnPos);
-        //indicator.fire(timeToHit)
+        indicatorSpawner.SpawnIndicator(timeToHit, true);
     }
 }
