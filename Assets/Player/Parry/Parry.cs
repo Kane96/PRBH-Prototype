@@ -9,7 +9,6 @@ public class Parry : MonoBehaviour {
 	}
 
     private void OnTriggerEnter(Collider other) {
-        print(other);
         if (other.gameObject.tag == "Parriable") {
             print("Poop");
             if (Input.GetKeyDown(KeyCode.Space)) {

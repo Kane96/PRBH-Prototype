@@ -5,11 +5,11 @@ using UnityEngine;
 public class Projectile : MonoBehaviour {
 
     [Tooltip("In seconds.")]
-    public float timeToHit;
+    private float timeToHit;
 
     private CharacterController player;
 
-    private float step = 0.1f;
+    private float step;
     private float startingTime;
     private Vector3 closestPoint;
 
@@ -33,10 +33,7 @@ public class Projectile : MonoBehaviour {
         }
 	}
 
-    /*
-    private void OnTriggerEnter(Collider other) {
-        print(timeToHitPlayer);
-        Destroy(gameObject);
+    public void SetTimeToHit(float newTimeToHit) {
+        timeToHit = newTimeToHit;
     }
-    */
 }

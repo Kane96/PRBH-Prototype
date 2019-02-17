@@ -5,30 +5,31 @@ using UnityEngine;
 public class IndicatorSpawner : MonoBehaviour {
 
     public GameObject indicator;
-    private Vector3 spawnPoint;
     private float screenWidth;
     public float timeToHit;
 
     private void Start() {
         screenWidth = Screen.width / 2;
-        spawnPoint = new Vector3(screenWidth, transform.position.y, 0);
     }
 
     void Update () {
         if (Input.GetKeyDown(KeyCode.P)) {
-            spawnIndicator(timeToHit, true, spawnPoint);
+            spawnIndicator(timeToHit, true);
         }
     }
 
-    public void spawnIndicator(float timeToHit, bool movingRight, Vector3 spawnPoint) {
+    public void spawnIndicator(float timeToHit, bool movingRight) {
         float xPosIncrement = screenWidth / timeToHit;
+        Vector3 spawnPoint;
         if (!movingRight) {
+            spawnPoint = new Vector3(screenWidth, transform.position.y, 0);
             xPosIncrement = -xPosIncrement;
-            spawnPoint = -spawnPoint;
+        } else {
+            spawnPoint = new Vector3(-screenWidth, transform.position.y, 0);
         }
 
         GameObject newIndicator = Instantiate(indicator, spawnPoint, Quaternion.identity) as GameObject;
-        newIndicator.transform.SetParent(gameObject.transform);
+        newIndicator.transform.SetParent(gameObject.transform, false);
         newIndicator.GetComponent<Indicator>().Initialise(timeToHit, xPosIncrement, movingRight);
     }
 }

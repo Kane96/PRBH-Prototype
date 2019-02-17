@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Indicator : MonoBehaviour {
 
-    public float timeToHit;
+    private float timeToHit;
     public float stayAfterHit;
     public bool isMovingRight = true;
     private float xPosIncrement;
@@ -23,7 +23,9 @@ public class Indicator : MonoBehaviour {
         gameObject.transform.position += Vector3.right * (xPosIncrement * Time.deltaTime);
 	}
 
-    public void Initialise(float timeToHit, float xPosIncrement, bool movingRight) {
-
+    public void Initialise(float newTimeToHit, float newxPosIncrement, bool newMovingRight) {
+        timeToHit = newTimeToHit;
+        xPosIncrement = newxPosIncrement;
+        isMovingRight = newMovingRight;
     }
 }

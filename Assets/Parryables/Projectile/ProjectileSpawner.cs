@@ -4,18 +4,8 @@ using UnityEngine;
 
 public class ProjectileSpawner : MonoBehaviour {
 
-    public GameObject projectile;
-    public float fireRate;
-    private float nextFire;
-
-    void Update () {
-		if (Input.GetKeyDown(KeyCode.P)) {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-        }
-
-        if (Time.time > nextFire) {
-            Instantiate(projectile, transform.position, Quaternion.identity);
-            nextFire += fireRate;
-        }   
-	}
+    public void SpawnProjectile(GameObject projectile, float timeToHit, Transform projSpawnPos) {
+        GameObject proj = Instantiate(projectile, projSpawnPos.position, Quaternion.identity) as GameObject;
+        proj.GetComponent<Projectile>().SetTimeToHit(timeToHit);
+    }
 }
